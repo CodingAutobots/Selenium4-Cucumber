@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Selenium-Cucumber-TestSuite">
+    <test name="SeleniumTests">
+        <classes>
+            <class name="LoginPageTest"/> <!-- Replace with your package and class name -->
+        </classes>
+    </test>
+</suite>
