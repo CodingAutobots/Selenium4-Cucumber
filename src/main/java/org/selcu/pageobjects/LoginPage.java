@@ -34,14 +34,23 @@ public class LoginPage extends BaseClass {
 
 
 
+    public void validateTitle(){
+        try{
+            softAssert.assertEquals(driver.getTitle(),"Swag Labs");
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+
     public void standardUserLogin(){
         try {
-            usernameField.sendKeys("standard_user");
-            passwordField.sendKeys("secret_sauce");
+            usernameField.sendKeys(prop.getProperty("username"));
+            passwordField.sendKeys(prop.getProperty("password"));
             loginBtn.click();
             wait.until(ExpectedConditions.visibilityOf(productPageTitle));
             softAssert.assertEquals(productPageTitle.getText(), "Products");
-            softAssert.assertAll("Validated test");
+            softAssert.assertAll("standardUserLogin");
         } catch (RuntimeException e) {
             throw new RuntimeException(e);
         }
