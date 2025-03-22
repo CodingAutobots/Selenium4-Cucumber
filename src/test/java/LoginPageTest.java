@@ -3,9 +3,11 @@ import org.selcu.pageobjects.LoginPage;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
 
 public class LoginPageTest extends BaseClass {
     LoginPage loginPage;
+    SoftAssert softAssert = new SoftAssert();
 
     @BeforeMethod
     public void setUp(){
@@ -15,18 +17,17 @@ public class LoginPageTest extends BaseClass {
 
     @Test(priority = 1)
     public void validateTitle(){
-        loginPage.validateTitle();
+        softAssert.assertEquals(loginPage.validateTitle(),"Swag Labs");
     }
 
     @Test(priority = 2)
     public void validateLogin(){
-        loginPage.standardUserLogin();
+        softAssert.assertEquals(loginPage.standardUserLogin(), "Products");
+        softAssert.assertAll();
     }
 
     @AfterMethod
     public void tear(){
         tearDown();
     }
-
-
 }

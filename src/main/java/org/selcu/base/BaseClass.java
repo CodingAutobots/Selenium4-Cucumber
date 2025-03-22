@@ -16,7 +16,6 @@ public class BaseClass {
     public WebDriver driver;
     WebDriverListener listener;
     public Properties prop;
-
     public BaseClass(){
         try{
             prop = new Properties();
@@ -51,7 +50,10 @@ public class BaseClass {
 
     public void tearDown(){
         try {
-            driver.close();
+            if (driver != null) {
+                driver.quit();
+                driver = null;
+            }
         } catch (Exception e){
             System.out.println("Failed to close browser session");
         }

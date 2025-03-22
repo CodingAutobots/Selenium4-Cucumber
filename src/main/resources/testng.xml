@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <suite name="Selenium-Cucumber-TestSuite">
-    <test name="SeleniumTests">
+    <listeners>
+        <listener class-name="org.selcu.util.ExtentReportListener" />
+    </listeners>
+    <test name="SeleniumTests" parallel ="classes" thread="2">
         <classes>
             <class name="LoginPageTest"/> <!-- Replace with your package and class name -->
         </classes>
