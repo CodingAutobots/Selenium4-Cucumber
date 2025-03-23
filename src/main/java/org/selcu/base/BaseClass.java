@@ -33,6 +33,7 @@ public class BaseClass {
                 ChromeOptions options = new ChromeOptions();
                 options.addArguments("start-maximized");
                 options.addArguments("--incognito");
+                options.addArguments("--headless");
                 driver = new ChromeDriver(options);
             } else if(browserName.equals("firefox")){
                 driver = new FirefoxDriver();
