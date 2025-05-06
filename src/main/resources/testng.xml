@@ -5,7 +5,7 @@
     </listeners>
     <test name="SeleniumTests">
         <classes>
-            <class name="tests.LoginPageTest"/> <!-- Replace with your package and class name -->
+            <class name="LoginPageTest"/> <!-- Replace with your package and class name -->
         </classes>
     </test>
 </suite>
