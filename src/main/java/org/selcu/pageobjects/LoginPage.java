@@ -33,6 +33,8 @@ public class LoginPage extends BaseClass {
 
 
 
+
+
     public String validateTitle(){
         try{
             return driver.getTitle();
@@ -54,4 +56,13 @@ public class LoginPage extends BaseClass {
         }
 
     }
+
+
+
+
+
+
+
+
+
 }

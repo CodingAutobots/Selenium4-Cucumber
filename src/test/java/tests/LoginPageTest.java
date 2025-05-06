@@ -1,3 +1,5 @@
+package tests;
+
 import org.selcu.base.BaseClass;
 import org.selcu.pageobjects.LoginPage;
 import org.testng.annotations.AfterMethod;

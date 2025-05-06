@@ -1,0 +1,7 @@
+FROM eclipse-temurin:17-jdk-alpine
+WORKDIR C:\Users\kunda\IdeaProjects\Selenium4-Cucumber
+COPY target/selenium-docker.jar selenium-docker.jar
+COPY target/selenium-docker-tests.jar selenium-docker-tests.jar
+COPY target/libs libs
+COPY src/main/resources/testng.xml testng.xml
+ENTRYPOINT java -cp selenium-docker.jar;selenium-docker-tests.jar;libs/* org.testng.TestNG ../src/main/resources/testng.xml
